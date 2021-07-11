@@ -10,10 +10,11 @@ const exphbs = require("express-handlebars");
 // inicializae express
 
 const app = express(); // esta constante respresenta nuestro servidor
+require("./database");
 
 // SETTINGS
 
-app.set("port", 3000); // indicacion del puerto que debe usar el server
+app.set("port", process.env.PORT || 3000); // indicacion del puerto que debe usar el server
 
 app.set("views", path.join(__dirname, "views")); // indica la ruta en la que se encuentra la carpeta de las vistas
 
